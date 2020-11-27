@@ -4,7 +4,7 @@ import {Login, MainApp, Register } from '../../pages';
 
 export const Routes = () => {
     return (
-        <Router>
+        <Router forceRefresh={true}>
             <Switch>
                 <Route path="/login">
                     <Login />

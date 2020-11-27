@@ -1,6 +1,7 @@
 import React from 'react'
 import {Button, Gap, Input, TextArea, Upload} from "../../components/atoms";
 import './createBlog.scss';
+import { withRouter } from "react-router";
 
 const CreateBlog = () => {
     return (
