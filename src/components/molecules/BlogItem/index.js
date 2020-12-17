@@ -3,18 +3,16 @@ import {RegisterBg} from "../../../assets";
 import './blogItem.scss';
 import {Button, Gap, Link} from "../../atoms";
 import {useHistory} from 'react-router-dom';
-const BlogItem = () => {
+const BlogItem = (props) => {
 	const history = useHistory();
+	const {image, title, name, date, body} = props;
 		return (
 				<div className={'blog-item'}>
-						<img className={'image-thumb'} src={RegisterBg} alt={'post'} />
+						<img className={'image-thumb'} src={image} alt={'post'} />
 						<div className={'content-detail'}>
-								<p className={'title'}>Title post</p>
-								<p className={'author'}>Author - Date post</p>
-								<p className={'body'}>Dalam Video Tutorial MERN Basic ini, kalian akan belajar bagaimana membuat sebuah aplikasi yang utuh dari sisi FrontEnd dan Juga BackEnd dengan menggunakan satu bahasa utama yaitu Javascript.
-										Dalam Video MERN ini, konsep CRUD dan REST API akan kita pelajari dengan mengimplementasikannya dalam sebuah aplikasi.
-										Ingin tau lebih lanjut, silahkan menonton.
-										Selamat Belajar.</p>
+								<p className={'title'}>{title}</p>
+								<p className={'author'}>{name} - {date}</p>
+								<p className={'body'}>{body}</p>
 						</div>
 					<Gap height={20} />
 					<Button title={'See Detail '} onClick={() => history.push('/detail-blog')} />
